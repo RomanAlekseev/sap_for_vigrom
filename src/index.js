@@ -1,4 +1,5 @@
 import { bootstrap } from "./framework";
 import { rootComponent } from "./components/rootComponent";
+import { getUsers } from "./framework";
 
-bootstrap(rootComponent);
+getUsers.delay(2000).then(() => bootstrap(rootComponent));
