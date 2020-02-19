@@ -1,8 +1,8 @@
 export class Component {
   constructor(config) {
     this.element = null;
-    //config destructorization
-    Object.assign(this, config);
+    this.entryClass = config.entryClass;
+    this.template = config.template;
   }
 
   render() {

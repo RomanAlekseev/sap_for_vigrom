@@ -1,38 +1,27 @@
-import { router } from "../tools/router";
+import { router } from "./routing/router";
 import { util } from "../tools/utils";
+import { renderComponent } from "./component/helpers";
+import { Routing } from "../core/routing";
 
 export class Root {
   constructor(config) {
-    // this.components = config.components;
-    Object.assign(this, config);
+    this.routes = config.routes;
+    this.components = config.components;
   }
 
   start() {
-    this.initComponents();
-    if (this.routes) this.initRoutes();
+    __initComponents(this.components);
+    if (this.routes) __initRouting(this.routes);
   }
+}
 
-  initComponents() {
-    this.components.forEach(this.renderComponent.bind(this));
-  }
+function __initComponents(components) {
+  components.forEach(renderComponent);
+}
 
-  initRoutes() {
-    window.addEventListener("hashchange", this.renderRoute.bind(this));
-    this.renderRoute();
-  }
+function __initRouting(routes) {
+  if (util.isUndefinded(routes)) return;
 
-  renderRoute() {
-    let url = router.getUrl();
-    let route = this.routes.find(r => r.path === url);
-
-    if (util.isUndefinded(route)) {
-      route = this.routes.find(r => r.path === "**");
-    }
-
-    this.renderComponent(route.component);
-  }
-
-  renderComponent(component) {
-    component.render();
-  }
+  let routing = new Routing(routes);
+  routing.init();
 }
