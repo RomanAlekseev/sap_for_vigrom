@@ -1,5 +1,6 @@
 import { ViewFrameWork } from "../framework";
 import { homeComponent } from "./home";
+import { header } from "./common/header";
 
 class Root extends ViewFrameWork {
   constructor(config) {
@@ -8,5 +9,5 @@ class Root extends ViewFrameWork {
 }
 
 export const rootComponent = new Root({
-  components: [homeComponent]
+  components: [homeComponent, header]
 });
