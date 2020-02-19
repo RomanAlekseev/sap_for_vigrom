@@ -1,4 +1,4 @@
-import { ViewFrameWork } from "../framework";
+import { ViewFrameWork } from "framework";
 import { homeComponent } from "./home";
 import { header } from "./common/header";
 import { appRoutes as routes } from "../routes";

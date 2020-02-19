@@ -1,4 +1,4 @@
-import { ViewFrameWorkComponent } from "../framework";
+import { ViewFrameWorkComponent } from "framework";
 
 class AboutPage extends ViewFrameWorkComponent {
   constructor(config) {

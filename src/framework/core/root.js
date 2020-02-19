@@ -26,7 +26,6 @@ export class Root {
     let route = this.routes.find(r => r.path === url);
 
     if (util.isUndefinded(route)) {
-      console.log("ok");
       route = this.routes.find(r => r.path === "**");
     }
 

@@ -2,6 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  resolve: {
+    alias: {
+      framework: path.resolve(__dirname, "src/framework/")
+    }
+  },
   context: path.join(__dirname, "src"),
 
   entry: "./index.js",
