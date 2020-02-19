@@ -7,9 +7,24 @@ export class Routing {
     this.routes = routes;
   }
 
+  setHistoryQueue() {
+    if (__historyQueue.length > 9) {
+      __historyQueue.shift();
+    }
+
+    __historyQueue.push(location.href);
+    sessionStorage.setItem("history", JSON.stringify(__historyQueue));
+  }
+
+  getHistoryQueue() {
+    return __historyQueue;
+  }
+
   init() {
-    window.addEventListener("hashchange", () => __renderRoute(this.routes));
-    __renderRoute(this.routes);
+    window.addEventListener("hashchange", () => {
+      withHistory.call(this, this.routes);
+    });
+    withHistory.call(this, this.routes);
   }
 }
 
@@ -24,4 +39,11 @@ function __renderRoute(routes) {
   }
 
   renderComponent(route[1]);
+}
+
+const __historyQueue = JSON.parse(sessionStorage.getItem("history")) || [];
+
+function withHistory(args) {
+  this.setHistoryQueue();
+  __renderRoute.apply(null, [args]);
 }
