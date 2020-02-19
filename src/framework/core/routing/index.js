@@ -20,6 +20,14 @@ export class Routing {
     return __historyQueue;
   }
 
+  historyBack() {
+    window.history.back();
+  }
+
+  historyForward() {
+    window.history.forward();
+  }
+
   init() {
     window.addEventListener("hashchange", () => {
       withHistory.call(this, this.routes);
