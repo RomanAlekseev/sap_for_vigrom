@@ -1,0 +1,19 @@
+{
+  "name": "vigrom-spa",
+  "version": "0.0.1",
+  "description": "My test SPA for vigromcorp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Alekseev",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "ejs": "^3.0.1"
+  }
+}
