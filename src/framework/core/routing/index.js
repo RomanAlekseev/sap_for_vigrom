@@ -21,16 +21,27 @@ export class Routing {
   }
 
   historyBack() {
-    window.history.back();
+    let historyCount = __historyCount || __historyQueue.length - 1;
+    __shouldUpdateHistory = false;
+    if (historyCount >= 0) {
+      window.location.replace(__historyQueue[historyCount--]);
+    }
   }
 
   historyForward() {
-    window.history.forward();
+    let historyCount = __historyCount || __historyQueue.length - 1;
+    __shouldUpdateHistory = false;
+    if (historyCount <= 10) {
+      window.location.replace(__historyQueue[historyCount++]);
+    }
   }
 
   init() {
     window.addEventListener("hashchange", () => {
-      withHistory.call(this, this.routes);
+      __shouldUpdateHistory
+        ? withHistory.call(this, this.routes)
+        : __renderRoute(this.routes),
+        (__shouldUpdateHistory = true);
     });
     withHistory.call(this, this.routes);
   }
@@ -55,3 +66,7 @@ function withHistory(args) {
   this.setHistoryQueue();
   __renderRoute.apply(null, [args]);
 }
+
+let __shouldUpdateHistory = true;
+
+let __historyCount = null;
