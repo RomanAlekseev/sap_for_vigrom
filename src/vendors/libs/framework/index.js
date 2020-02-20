@@ -4,5 +4,14 @@ import { bootstrap } from "./core/functions/bootstrap";
 import { util } from "./tools/utils";
 import { router } from "./core/routing/router";
 import { http } from "./tools/http";
+import { history } from "./core/routing";
 
-export { ViewFrameWork, ViewFrameWorkComponent, bootstrap, util, router, http };
+export {
+  ViewFrameWork,
+  ViewFrameWorkComponent,
+  bootstrap,
+  util,
+  router,
+  http,
+  history
+};
