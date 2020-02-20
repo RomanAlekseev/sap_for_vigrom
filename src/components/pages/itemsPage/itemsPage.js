@@ -1,4 +1,5 @@
 import { ViewFrameWorkComponent } from "framework";
+import template from "templates/itemsPageTemplate";
 
 class ItemsPage extends ViewFrameWorkComponent {
   constructor(config) {
@@ -20,15 +21,6 @@ const listArr = Object.entries(data.items).map(item => {
 });
 
 export const itemsPage = new ItemsPage({
-  entryClass: "root",
-  template: `<div>Items Component</div>
-              <ul>
-                <li><a href="#menu">Menu</a></li> 
-                <li><a href="#about">About</a></li>  
-              </ul>
-              <hr/>
-              <ul>        
-               ${listArr}
-              </ul>
-              `
+  title: "SPA - Items",
+  template: template(listArr)
 });

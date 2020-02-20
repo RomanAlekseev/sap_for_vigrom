@@ -1,7 +1,5 @@
 import { ViewFrameWork } from "framework";
-import { homeComponent } from "./pages/homePage";
-import { header } from "./common/header";
-import { footer } from "./common/footer";
+import homeComponent from "./pages/homePage/";
 import { appRoutes as routes } from "../routes";
 
 class Root extends ViewFrameWork {
@@ -11,6 +9,6 @@ class Root extends ViewFrameWork {
 }
 
 export const rootComponent = new Root({
-  components: [homeComponent, header, footer],
+  components: [homeComponent],
   routes
 });

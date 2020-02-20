@@ -1,16 +1,17 @@
 export class Component {
   constructor(config) {
     this.element = null;
-    this.entryClass = config.entryClass;
+    this.newPageTitle = config.title;
     this.template = config.template;
   }
 
   render() {
-    this.element = document.querySelector(`.${this.entryClass}`);
+    this.element = document.querySelector(".root");
+    if (this.newPageTitle) document.title = this.newPageTitle;
 
     if (!this.element)
       throw new Error(
-        `Tag with this class attribute: ${this.entryClass} wasn't found in index.html `
+        `Tag with this class attribute: .root wasn't found in index.html `
       );
 
     this.element.innerHTML = this.template;

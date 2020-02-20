@@ -1,4 +1,5 @@
 import { ViewFrameWorkComponent } from "framework";
+import template from "templates/notFoundPageTemplate";
 
 class NotFound extends ViewFrameWorkComponent {
   constructor(config) {
@@ -6,7 +7,7 @@ class NotFound extends ViewFrameWorkComponent {
   }
 }
 
-export const notFound = new NotFound({
-  entryClass: "root",
-  template: `<div>This page is not found</div>`
+export const notFoundPage = new NotFound({
+  title: "SPA - Page Not Found",
+  template
 });
