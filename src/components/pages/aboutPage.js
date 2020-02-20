@@ -7,7 +7,7 @@ class AboutPage extends ViewFrameWorkComponent {
 }
 
 export const aboutPage = new AboutPage({
-  entryClass: "home",
+  entryClass: "root",
   template: `<div>About Component</div>
               <ul>
                 <li><a href="#menu">Menu</a></li> 

@@ -7,7 +7,7 @@ class Home extends ViewFrameWorkComponent {
 }
 
 export const homeComponent = new Home({
-  entryClass: "home",
+  entryClass: "root",
   template: `<div>Home Component</div>
               <ul>
                 <li><a href="#menu">Menu</a></li> 

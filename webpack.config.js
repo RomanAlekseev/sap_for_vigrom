@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   resolve: {
     alias: {
-      framework: path.resolve(__dirname, "src/framework/")
+      framework: path.resolve(__dirname, "src/vendors/libs/framework/")
     }
   },
   context: path.join(__dirname, "src"),

@@ -7,6 +7,6 @@ class NotFound extends ViewFrameWorkComponent {
 }
 
 export const notFound = new NotFound({
-  entryClass: "home",
+  entryClass: "root",
   template: `<div>This page is not found</div>`
 });

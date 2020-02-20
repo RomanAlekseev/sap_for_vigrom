@@ -20,7 +20,7 @@ const listArr = Object.entries(data.items).map(item => {
 });
 
 export const itemsPage = new ItemsPage({
-  entryClass: "home",
+  entryClass: "root",
   template: `<div>Items Component</div>
               <ul>
                 <li><a href="#menu">Menu</a></li> 
