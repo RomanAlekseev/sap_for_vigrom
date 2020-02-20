@@ -1,4 +1,4 @@
-const template = `<div>Home Component</div>
+const template = () => `<div>Home Component</div>
 <button class="goBackButton">GoBack</button>
 <ul>
   <li><a href="#menu">Menu</a></li> 

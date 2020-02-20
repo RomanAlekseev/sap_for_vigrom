@@ -1,6 +1,15 @@
 import { ViewFrameWorkComponent, history, http } from "framework";
 import template from "templates/itemsPageTemplate";
 
+const data = {
+  items: {
+    1: { name: "item1", quantity: "1", price: "20" }
+  },
+  total: 3
+};
+
+const listArr = itemsParse(data);
+
 class ItemsPage extends ViewFrameWorkComponent {
   constructor(config) {
     super(config);
@@ -8,7 +17,8 @@ class ItemsPage extends ViewFrameWorkComponent {
 
   didMount() {
     http.get("http://localhost:3000/items").then(res => {
-      console.log(res);
+      this.props.list = itemsParse(res);
+      this.render();
     });
   }
 
@@ -23,20 +33,16 @@ class ItemsPage extends ViewFrameWorkComponent {
   }
 }
 
-const data = {
-  items: {
-    1: { name: "item1", quantity: "1", price: "20" },
-    2: { name: "item2", quantity: "5", price: "5" },
-    3: { name: "item3", quantity: "3", price: "30" }
-  },
-  total: 3
-};
-
-const listArr = Object.entries(data.items).map(item => {
-  return `<li>name: ${item[1].name},<br/> quantity: ${item[1].quantity},<br/> price: ${item[1].price} </li>`;
-});
-
 export const itemsPage = new ItemsPage({
   title: "SPA - Items",
-  template: template(listArr)
+  props: {
+    list: listArr
+  },
+  template
 });
+
+function itemsParse(arr) {
+  return Object.entries(arr.items).map(item => {
+    return `<li>name: ${item[1].name},<br/> quantity: ${item[1].quantity},<br/> price: ${item[1].price} </li>`;
+  });
+}

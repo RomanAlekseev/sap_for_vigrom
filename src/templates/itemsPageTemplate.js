@@ -1,4 +1,6 @@
-const template = list => {
+import { formatArray } from "./templateUtils";
+
+const template = ({ list }) => {
   return `<div>Items Component</div>
   <button class="goBackButton">GoBack</button>
     <ul>
@@ -7,7 +9,7 @@ const template = list => {
     </ul>
     <hr/>
     <ul>        
-     ${list}
+     ${formatArray(list)}
     </ul>
     `;
 };

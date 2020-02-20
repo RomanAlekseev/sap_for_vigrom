@@ -5,6 +5,7 @@ export class Component {
     this.element = null;
     this.newPageTitle = config.title;
     this.template = config.template;
+    this.props = config.props || {};
   }
 
   render() {
@@ -15,8 +16,7 @@ export class Component {
       throw new Error(
         `Tag with this class attribute: .root wasn't found in index.html `
       );
-
-    this.element.innerHTML = this.template;
+    this.element.innerHTML = this.template.call(this, this.props);
 
     this.__initEvents();
   }
