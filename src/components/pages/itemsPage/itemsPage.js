@@ -1,9 +1,15 @@
-import { ViewFrameWorkComponent, history } from "framework";
+import { ViewFrameWorkComponent, history, http } from "framework";
 import template from "templates/itemsPageTemplate";
 
 class ItemsPage extends ViewFrameWorkComponent {
   constructor(config) {
     super(config);
+  }
+
+  didMount() {
+    http.get("http://localhost:3000/items").then(res => {
+      console.log(res);
+    });
   }
 
   events() {

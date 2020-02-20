@@ -1,4 +1,3 @@
-import { router } from "./routingClass/router";
 import { util } from "../../tools/utils";
 import { renderComponent } from "./componentClass/helpers";
 import { Routing } from "./routingClass";
