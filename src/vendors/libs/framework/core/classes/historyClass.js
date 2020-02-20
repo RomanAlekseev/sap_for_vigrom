@@ -1,5 +1,3 @@
-import { util } from "../tools/utils";
-
 export default class History {
   setHistoryQueue() {
     if (__historyQueue.length > 9) {

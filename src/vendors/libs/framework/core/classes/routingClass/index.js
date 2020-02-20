@@ -1,7 +1,7 @@
 import { util } from "framework/tools/utils";
 import { router } from "./router";
-import { renderComponent } from "../component/helpers";
-import History from "framework/tools/history";
+import { renderComponent } from "../componentClass/helpers";
+import History from "../historyClass";
 
 export const history = new History();
 

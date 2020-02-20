@@ -1,10 +1,10 @@
-import { Root as ViewFrameWork } from "./core/root";
-import { Component as ViewFrameWorkComponent } from "./core/component";
-import { bootstrap } from "./core/functions/bootstrap";
+import { Root as ViewFrameWork } from "./core/classes/rootClass";
+import { Component as ViewFrameWorkComponent } from "./core/classes/componentClass";
+import { bootstrap } from "./core/initialization/bootstrap";
 import { util } from "./tools/utils";
-import { router } from "./core/routing/router";
-import { http } from "./tools/http";
-import { history } from "./core/routing";
+import { router } from "./core/classes/routingClass/router";
+import { http } from "./core/classes/httpClass";
+import { history } from "./core/classes/routingClass";
 
 export {
   ViewFrameWork,

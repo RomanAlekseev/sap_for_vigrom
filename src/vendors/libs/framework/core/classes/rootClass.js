@@ -1,7 +1,7 @@
-import { router } from "./routing/router";
-import { util } from "../tools/utils";
-import { renderComponent } from "./component/helpers";
-import { Routing } from "../core/routing";
+import { router } from "./routingClass/router";
+import { util } from "../../tools/utils";
+import { renderComponent } from "./componentClass/helpers";
+import { Routing } from "./routingClass";
 
 export class Root {
   constructor(config) {
