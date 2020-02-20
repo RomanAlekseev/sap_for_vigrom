@@ -1,3 +1,5 @@
+import { util } from "framework/tools/utils";
+
 export class Component {
   constructor(config) {
     this.element = null;
@@ -15,5 +17,21 @@ export class Component {
       );
 
     this.element.innerHTML = this.template;
+
+    this.__initEvents();
+  }
+
+  __initEvents() {
+    if (util.isUndefinded(this.events)) return;
+
+    let events = this.events();
+
+    Object.keys(events).forEach(key => {
+      let listener = key.split(" ");
+
+      this.element
+        .querySelector(listener[1])
+        .addEventListener(listener[0], this[events[key]].bind(this));
+    });
   }
 }

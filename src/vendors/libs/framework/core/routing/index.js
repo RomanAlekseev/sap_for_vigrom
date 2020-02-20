@@ -13,11 +13,8 @@ export class Routing {
   init() {
     window.addEventListener("hashchange", () => {
       __renderRoute(this.routes);
-      if (history.shouldUpdate) history.setHistoryQueue();
-      history.shouldUpdateToTrue();
     });
     __renderRoute(this.routes);
-    history.setHistoryQueue();
   }
 }
 
@@ -32,4 +29,5 @@ function __renderRoute(routes) {
   }
 
   renderComponent(route[1]);
+  history.setHistoryQueue();
 }
