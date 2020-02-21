@@ -1,5 +1,5 @@
-## sap_for_vigrom
-Моё тестовое SAP. Без view фреймворков для vigrom.
+## spa_for_vigrom
+Моё тестовое SPA. Без view фреймворков для vigrom.
 
 ### Запуск:
 - npm i
