@@ -1,7 +1,7 @@
 import { ViewFrameWorkComponent, history } from "framework";
-import template from "templates/notFoundPageTemplate";
+import template from "templates/menuTemplate";
 
-class NotFound extends ViewFrameWorkComponent {
+class Menu extends ViewFrameWorkComponent {
   constructor(config) {
     super(config);
   }
@@ -17,7 +17,7 @@ class NotFound extends ViewFrameWorkComponent {
   }
 }
 
-export const notFoundPage = new NotFound({
-  title: "SPA - Page Not Found",
+export const menu = new Menu({
+  title: "SPA - Menu",
   template
 });

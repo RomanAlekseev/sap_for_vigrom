@@ -16,8 +16,9 @@ class ItemsPage extends ViewFrameWorkComponent {
   }
 
   didMount() {
-    http.get("http://localhost:3000/items").then(res => {
+    http.get("http://localhost:4020/items").then(res => {
       this.props.list = itemsParse(res);
+      this.props.total = Object.entries(res)[1][1];
       this.render();
     });
   }
@@ -41,7 +42,8 @@ export const itemsPage = new ItemsPage({
   title: "SPA - Items",
   props: {
     list: listArr,
-    history: []
+    history: [],
+    total: null
   },
   template
 });

@@ -4,17 +4,22 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   resolve: {
     alias: {
-      framework: path.resolve(__dirname, "src/vendors/libs/framework/"),
+      framework: path.resolve(__dirname, "src/vendors/framework/"),
       templates: path.resolve(__dirname, "src/templates/")
     }
   },
   context: path.join(__dirname, "src"),
 
-  entry: "./index.js",
+  entry: {
+    vendor: ["framework"],
+    main: ["./index.js"]
+  },
+  mode: "development",
 
   output: {
-    filename: "bundle.js",
-    path: path.join(__dirname, "public")
+    filename: "[name]-bundle.js",
+    path: path.resolve(__dirname, "public"),
+    publicPath: "/"
   },
 
   devtool: "eval",
@@ -27,7 +32,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
