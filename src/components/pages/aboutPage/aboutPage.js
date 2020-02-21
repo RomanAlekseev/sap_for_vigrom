@@ -14,6 +14,10 @@ class AboutPage extends ViewFrameWorkComponent {
   goBack() {
     history.goBack();
   }
+
+  goForward() {
+    history.goForward();
+  }
 }
 
 export const aboutPage = new AboutPage({

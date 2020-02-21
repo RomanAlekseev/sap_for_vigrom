@@ -31,12 +31,17 @@ class ItemsPage extends ViewFrameWorkComponent {
   goBack() {
     history.goBack();
   }
+
+  goForward() {
+    history.goForward();
+  }
 }
 
 export const itemsPage = new ItemsPage({
   title: "SPA - Items",
   props: {
-    list: listArr
+    list: listArr,
+    history: []
   },
   template
 });

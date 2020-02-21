@@ -11,7 +11,8 @@ export class Routing {
   }
 
   init() {
-    window.addEventListener("hashchange", () => {
+    window.addEventListener("hashchange", ({ newUrl, oldURL }) => {
+      if (newUrl !== oldURL) history.setHistoryQueue();
       __renderRoute(this.routes);
     });
     __renderRoute(this.routes);
@@ -29,5 +30,4 @@ function __renderRoute(routes) {
   }
 
   renderComponent(route[1]);
-  history.setHistoryQueue();
 }

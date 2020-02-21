@@ -5,16 +5,6 @@ class Home extends ViewFrameWorkComponent {
   constructor(config) {
     super(config);
   }
-
-  events() {
-    return {
-      "click .goBackButton": "goBack"
-    };
-  }
-
-  goBack() {
-    history.goBack();
-  }
 }
 
 export const homePage = new Home({
