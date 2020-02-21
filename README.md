@@ -1,7 +1,7 @@
 ## sap_for_vigrom
-Моё тестовое SAP. без view фреймворков для vigrom.
+Моё тестовое SAP. Без view фреймворков для vigrom.
 
-###Запуск:
+### Запуск:
 - npm i
 - npm run start
 
