@@ -7,7 +7,7 @@
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "node server",
-    "dev:client": "webpack-dev-server --open",
+    "dev:client": "webpack-dev-server --open --watch",
     "start": "npm-run-all --parallel dev:*"
   },
   "author": "Roman Alekseev",

@@ -17,7 +17,7 @@ class Menu extends ViewFrameWorkComponent {
   }
 }
 
-export const menu = new Menu({
+export const menuPage = new Menu({
   title: "SPA - Menu",
   template
 });

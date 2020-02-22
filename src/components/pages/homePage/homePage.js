@@ -1,5 +1,6 @@
 import { ViewFrameWorkComponent, history } from "framework";
 import template from "templates/homePageTemplate";
+import "./homePage.css";
 
 class Home extends ViewFrameWorkComponent {
   constructor(config) {
