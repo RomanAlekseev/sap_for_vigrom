@@ -1,5 +1,6 @@
 import { ViewFrameWorkComponent, history } from "framework";
 import template from "templates/menuTemplate";
+import "./menuPage.css";
 
 class Menu extends ViewFrameWorkComponent {
   constructor(config) {

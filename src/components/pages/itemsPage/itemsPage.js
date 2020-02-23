@@ -1,5 +1,6 @@
 import { ViewFrameWorkComponent, history, http } from "framework";
 import template from "templates/itemsPageTemplate";
+import "./itemsPage.css";
 
 const data = {
   items: {
@@ -31,10 +32,6 @@ class ItemsPage extends ViewFrameWorkComponent {
 
   goBack() {
     history.goBack();
-  }
-
-  goForward() {
-    history.goForward();
   }
 }
 

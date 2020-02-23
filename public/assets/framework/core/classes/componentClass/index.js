@@ -6,17 +6,19 @@ export class Component {
     this.newPageTitle = config.title;
     this.template = config.template;
     this.props = config.props || {};
-    this.appContainer = document.querySelector(".root");
+    this.classContainer = config.entry || ".root";
+    this.appContainer = document.querySelector(`${this.classContainer}`);
     this.currentHashContainer = document.querySelector(".current_hash");
     this.historyContainer = document.querySelector(".history_display");
   }
 
   render() {
-    if (this.newPageTitle) document.title = this.newPageTitle;
+    if (this.newPageTitle)
+      document.title = this.newPageTitle && this.newPageTitle;
 
     if (!this.appContainer)
       throw new Error(
-        `Tag with this class attribute: .root wasn't found in index.html `
+        `Tag with this class attribute: ${this.classContainer} wasn't found in index.html `
       );
     this.appContainer.innerHTML = this.template.call(this, this.props);
 

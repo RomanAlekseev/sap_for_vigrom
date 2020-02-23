@@ -1,5 +1,6 @@
 import { ViewFrameWorkComponent, history } from "framework";
 import template from "templates/aboutPageTemplate";
+import "./aboutPage.css";
 
 class AboutPage extends ViewFrameWorkComponent {
   constructor(config) {
@@ -13,10 +14,6 @@ class AboutPage extends ViewFrameWorkComponent {
 
   goBack() {
     history.goBack();
-  }
-
-  goForward() {
-    history.goForward();
   }
 }
 

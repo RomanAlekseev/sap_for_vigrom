@@ -24,10 +24,12 @@ function __renderRoute(routes) {
 
   let url = router.getUrl();
   let route = routes.find(r => r[0] === url);
+  const [, common] = routes.find(r => r[0] === "common");
 
   if (util.isUndefinded(route)) {
     route = routes.find(r => r[0] === "notFound");
   }
 
   renderComponent(route[1]);
+  common.forEach(r => renderComponent(r));
 }

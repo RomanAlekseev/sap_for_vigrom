@@ -3,11 +3,13 @@ import aboutPage from "../components/pages/aboutPage/";
 import itemsPage from "../components/pages/itemsPage/";
 import notFound from "../components/pages/notFoundPage/";
 import menuPage from "../components/pages/menuPage/";
+import { navigation } from "../components/common/navigation";
 
 export const appRoutes = {
-  default: homeComponent,
+  "/": homeComponent,
   about: aboutPage,
   items: itemsPage,
   menu: menuPage,
-  notFound: notFound
+  notFound: notFound,
+  common: [navigation]
 };

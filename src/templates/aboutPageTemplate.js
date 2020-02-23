@@ -1,9 +1,6 @@
 const template = () => `<button class="goBackButton">GoBack</button>
 <div class="col-lg-d-flex align-items-center">
 <h2 class="mr-5">About Us</h2>
-<ul class="list-group list-group-horizontal-xl">
-<li class="list-group-item"><a href="#menu">Menu</a></li>
-<li class="list-group-item"><a href="#items">Items</a></li>
 </div>
 <hr/>
 <p class="text-center">
