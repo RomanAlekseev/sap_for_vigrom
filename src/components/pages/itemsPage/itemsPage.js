@@ -14,16 +14,6 @@ class ItemsPage extends ViewFrameWorkComponent {
       this.render();
     });
   }
-
-  events() {
-    return {
-      "click .goBackButton": "goBack"
-    };
-  }
-
-  goBack() {
-    history.goBack();
-  }
 }
 
 export const itemsPage = new ItemsPage({
@@ -39,13 +29,13 @@ export const itemsPage = new ItemsPage({
 function itemsParse(arr) {
   return Object.entries(arr.items).map(item => {
     return `
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-dark mb-3" style="max-width: 21rem;">
      <h4 class="card-header">${item[1].name} <span class="text-danger">x</span> ${item[1].quantity}</h4>
      <div class="card-body">
        <h5 class="card-title text-muted">Description:</h5>
        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
      </div>
-     <div class="price ml-auto mr-3 pb-3">Price: <b>${item[1].price} EUR</b></div>
+     <div class="price ml-auto mr-3 pb-3" title="Buy Now">Price: <b>${item[1].price} EUR</b></div>
     </div>`;
   });
 }

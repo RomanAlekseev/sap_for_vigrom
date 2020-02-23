@@ -5,16 +5,6 @@ class NotFound extends ViewFrameWorkComponent {
   constructor(config) {
     super(config);
   }
-
-  events() {
-    return {
-      "click .goBackButton": "goBack"
-    };
-  }
-
-  goBack() {
-    history.goBack();
-  }
 }
 
 export const notFoundPage = new NotFound({

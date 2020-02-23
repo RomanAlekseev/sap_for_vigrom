@@ -6,15 +6,6 @@ class AboutPage extends ViewFrameWorkComponent {
   constructor(config) {
     super(config);
   }
-  events() {
-    return {
-      "click .goBackButton": "goBack"
-    };
-  }
-
-  goBack() {
-    history.goBack();
-  }
 }
 
 export const aboutPage = new AboutPage({

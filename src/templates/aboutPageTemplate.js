@@ -1,4 +1,4 @@
-const template = () => `<button class="goBackButton">GoBack</button>
+const template = () => `
 <div class="col-lg-d-flex align-items-center">
 <h2 class="mr-5">About Us</h2>
 </div>

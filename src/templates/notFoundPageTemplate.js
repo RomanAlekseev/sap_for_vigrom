@@ -1,4 +1,4 @@
-const template = () => `<button class="goBackButton">GoBack</button>
+const template = () => `
 <div>This page is not found</div>`;
 
 export default template;

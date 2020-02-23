@@ -23,10 +23,9 @@ export class Component {
     this.appContainer.innerHTML = this.template.call(this, this.props);
 
     //update current-hash
-    this.currentHashContainer.innerHTML = `<div class="text-danger position-absolute">${location.hash.replace(
-      "#",
-      "# "
-    )}</div>`;
+    this.currentHashContainer.innerHTML = `<div class="text-danger">${
+      location.hash.length > 1 ? location.hash.replace("#", "# ") : "# home"
+    }</div>`;
     //update history-block
     if (history.getHistoryQueue().length) {
       this.historyContainer.innerHTML =
