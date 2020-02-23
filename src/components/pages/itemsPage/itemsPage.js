@@ -2,15 +2,6 @@ import { ViewFrameWorkComponent, history, http } from "framework";
 import template from "templates/itemsPageTemplate";
 import "./itemsPage.css";
 
-const data = {
-  items: {
-    1: { name: "item1", quantity: "1", price: "20" }
-  },
-  total: 3
-};
-
-const listArr = itemsParse(data);
-
 class ItemsPage extends ViewFrameWorkComponent {
   constructor(config) {
     super(config);
@@ -38,7 +29,7 @@ class ItemsPage extends ViewFrameWorkComponent {
 export const itemsPage = new ItemsPage({
   title: "SPA - Items",
   props: {
-    list: listArr,
+    list: [],
     history: [],
     total: null
   },
@@ -47,6 +38,14 @@ export const itemsPage = new ItemsPage({
 
 function itemsParse(arr) {
   return Object.entries(arr.items).map(item => {
-    return `<li>name: ${item[1].name},<br/> quantity: ${item[1].quantity},<br/> price: ${item[1].price} </li>`;
+    return `
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+     <h4 class="card-header">${item[1].name} <span class="text-danger">x</span> ${item[1].quantity}</h4>
+     <div class="card-body">
+       <h5 class="card-title text-muted">Description:</h5>
+       <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+     </div>
+     <div class="price ml-auto mr-3 pb-3">Price: <b>${item[1].price} EUR</b></div>
+    </div>`;
   });
 }

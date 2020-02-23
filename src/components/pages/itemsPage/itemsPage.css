@@ -1,0 +1,13 @@
+.price {
+  background: #dc3545;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  transform: rotate(4deg);
+}
+
+.card:nth-of-type(2) .price {
+  background: rgb(54, 54, 194);
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  transform: rotate(-4deg);
+}

@@ -6,9 +6,9 @@ const template = ({ list, total }) => {
   <h2 class="mr-5">Items</h2>
   </div>
   <hr/>
-  <ul class="mt-3 d-flex justify-content-around items">        
+  <div class="mt-3 d-flex justify-content-around items">        
      ${formatArray(list)}
-    </ul>
+    </div>
     <div class="mb-3"><b>Total: ${total}</b></div>
     `;
 };
