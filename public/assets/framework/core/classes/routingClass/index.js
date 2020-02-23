@@ -30,6 +30,6 @@ function __renderRoute(routes) {
     route = routes.find(r => r[0] === "notFound");
   }
 
-  renderComponent(route[1]);
   common.forEach(r => renderComponent(r));
+  route[1]().then(component => renderComponent(component));
 }

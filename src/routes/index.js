@@ -1,16 +1,22 @@
-import homeComponent from "../components/pages/homePage/";
-import aboutPage from "../components/pages/aboutPage/";
-import itemsPage from "../components/pages/itemsPage/";
-import notFound from "../components/pages/notFoundPage/";
-import menuPage from "../components/pages/menuPage/";
 import { goBackButton } from "../components/common/goBackButton";
 import { navigation } from "../components/common/navigation";
 
 export const appRoutes = {
-  "/": homeComponent,
-  about: aboutPage,
-  items: itemsPage,
-  menu: menuPage,
-  notFound: notFound,
+  "/": () =>
+    import(/* webpackMode: lazy */ "../components/pages/homePage/").then(
+      page => page.default
+    ),
+  about: () =>
+    import(/* webpackMode: lazy */ "../components/pages/aboutPage/").then(
+      page => page.default
+    ),
+  items: () =>
+    import(/* webpackMode: lazy */ "../components/pages/itemsPage/").then(
+      page => page.default
+    ),
+  notFound: () =>
+    import(/* webpackMode: lazy */ "../components/pages/notFoundPage/").then(
+      page => page.default
+    ),
   common: [navigation, goBackButton]
 };
