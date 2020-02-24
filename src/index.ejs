@@ -37,6 +37,23 @@
       .items {
         list-style-type: none;
       }
+
+      .animate-logo {
+        animation-name: rotateLogo;
+        animation-duration: 0.8s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes rotateLogo {
+        0% {
+          transform: rotate(-15deg);
+        }
+
+        100% {
+          transform: rotate(1076deg);
+        }
+      }
     </style>
   </head>
   <body class="d-flex flex-column justify-content-between">
