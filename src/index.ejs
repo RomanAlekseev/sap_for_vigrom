@@ -8,17 +8,16 @@
 
     <title>SPA</title>
     <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
       .tools > * {
         min-width: 4rem;
       }
 
       .root {
         margin-bottom: 3rem;
+      }
+
+      .root ul {
+        list-style-type: none;
       }
 
       .logo-container {
@@ -28,11 +27,6 @@
       .logo {
         font-family: "Trade Winds", cursive;
       }
-      .nav-container {
-        flex-direction: row;
-        justify-content: space-around;
-      }
-
       .root {
         min-height: 28vh;
       }
@@ -45,14 +39,14 @@
       }
     </style>
   </head>
-  <body>
+  <body class="d-flex flex-column justify-content-between">
     <%- include ./templates/common/headerTemplate.html -%>
     <main>
       <div class="tools container d-flex align-items-center">
         <div class="current_hash"></div>
         <div class="goBackButton"></div>
       </div>
-      <div class="root container mt-5">
+      <div class="root container mt-5 mx-auto">
         Loading...
       </div>
       <div class="history_display container mt-auto "></div>
